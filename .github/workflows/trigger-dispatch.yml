@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 jobs:
   trigger-dispatch:
+    permissions: "write-all"
     uses: alexxss/satis-github/.github/workflows/on-dispatch.yml@main
     with:
       package_name: ${{ vars.PACKAGE_NAME }}
