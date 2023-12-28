@@ -8,4 +8,5 @@ jobs:
     uses: alexxss/satis-github/.github/workflows/on-dispatch.yml@main
     with:
       package_name: ${{ vars.PACKAGE_NAME }}
+    secrets: inherit
     
