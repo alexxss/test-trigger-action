@@ -4,25 +4,25 @@ on:
   workflow_dispatch:
 jobs:
   trigger-dispatch:
-    permissions: "write-all"
-    # uses: alexxss/satis-github/.github/workflows/on-dispatch.yml@main
-    # with:
-    #   package_name: ${{ vars.PACKAGE_NAME }}
-    # secrets: 
-    #   PAT_TOKEN: ${{ secrets.TOKEN }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            github.rest.actions.createWorkflowDispatch({
-              owner: 'alexxss',
-              repo: 'satis-github',
-              workflow_id: 'deploy.yml',
-              ref: 'main',
-              inputs: {
-                package_name: '${{ vars.PACKAGE_NAME }}'
-              },
-            })
+    # permissions: "write-all"
+    uses: alexxss/satis-github/.github/workflows/on-dispatch.yml@main
+    with:
+      package_name: ${{ vars.PACKAGE_NAME }}
+    secrets: 
+      PAT_TOKEN: ${{ secrets.TOKEN }}
+    # runs-on: ubuntu-latest
+    # steps:
+    #   - uses: actions/github-script@v6
+    #     with:
+    #       github-token: ${{ secrets.GITHUB_TOKEN }}
+    #       script: |
+    #         github.rest.actions.createWorkflowDispatch({
+    #           owner: 'alexxss',
+    #           repo: 'satis-github',
+    #           workflow_id: 'deploy.yml',
+    #           ref: 'main',
+    #           inputs: {
+    #             package_name: '${{ vars.PACKAGE_NAME }}'
+    #           },
+    #         })
     
