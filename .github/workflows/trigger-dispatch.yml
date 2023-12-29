@@ -9,7 +9,7 @@ jobs:
     with:
       package_name: ${{ vars.PACKAGE_NAME }}
     secrets: 
-      TOKEN: ${{ secrets.TOKEN }}
+      TOKEN: ${{ secrets.PAT_TOKEN }}
     # runs-on: ubuntu-latest
     # steps:
     #   - uses: actions/github-script@v6
