@@ -9,5 +9,5 @@ jobs:
     with:
       package_name: ${{ vars.PACKAGE_NAME }}
     secrets: 
-      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+      PAT_TOKEN: ${{ secrets.TOKEN }}
     
